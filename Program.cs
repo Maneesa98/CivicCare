@@ -1,4 +1,4 @@
-using CivicCare.Api.Data;
+using CivicCare.Infrastructure.Data;
 using CivicCare.Api.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;

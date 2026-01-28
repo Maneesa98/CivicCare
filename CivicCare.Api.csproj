@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DTOs\**" />
+    <Compile Remove="Migrations\**" />
+    <Content Remove="DTOs\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="DTOs\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="DTOs\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="MediatR" Version="8.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
@@ -20,8 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\CivicCare.Application\CivicCare.Application.csproj" />
+    <ProjectReference Include="..\CivicCare.Infrastructure\CivicCare.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

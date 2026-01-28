@@ -1,4 +1,4 @@
-﻿using CivicCare.Api.Requests;
+﻿using CivicCare.Application.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
