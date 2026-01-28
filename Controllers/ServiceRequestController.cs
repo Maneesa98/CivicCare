@@ -2,68 +2,53 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
-namespace CivicCare.Api.Controllers
+[ApiController]
+[Route("api/requests")]
+public class ServiceRequestsController : ControllerBase
 {
-    [Authorize]
-    [ApiController]
-    [Route("api/requests")]
-    public class ServiceRequestController : ControllerBase
+    private readonly IMediator _mediator;
+
+    public ServiceRequestsController(IMediator mediator)
     {
-        private readonly IMediator _mediator;
-
-        public ServiceRequestController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        [HttpPost]
-        [Authorize(Roles = "Citizen")]
-        public async Task<IActionResult> Create(CreateServiceRequest command)
-        {
-            var result = await _mediator.Send(command);
-
-            if (result.Status == "success")
-            {
-                return Ok(new
-                {
-                    message = result.Message,
-                    status = result.Status,
-                    id = result.Data
-                });
-            }
-
-            return BadRequest(new
-            {
-                message = result.Message,
-                status = result.Status,
-                error = result.Error
-            });
-        }
-
-        [HttpPut("{id}/status")]
-        [Authorize(Roles = "Officer,Admin")]
-        public async Task<IActionResult> UpdateStatus(int id, UpdateStatusRequest command)
-        {
-            command.ServiceRequestId = id;
-            var result = await _mediator.Send(command);
-
-            if (result.Status == "success")
-            {
-                return Ok(new
-                {
-                    message = result.Message,
-                    status = result.Status,
-                    id = result.Data
-                });
-            }
-
-            return BadRequest(new
-            {
-                message = result.Message,
-                status = result.Status,
-                error = result.Error
-            });
-        }
+        _mediator = mediator;
     }
+
+    // ===================== CITIZEN =====================
+    [HttpPost]
+    [Authorize(Roles = "Citizen")]
+    public async Task<IActionResult> Create(
+        CreateServiceRequest command)
+    {
+        command.CreatedById = int.Parse(
+            User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        return Ok(await _mediator.Send(command));
+    }
+
+    //// ===================== ADMIN =====================
+    //[HttpPut("{id}/assign")]
+    //[Authorize(Roles = "Admin")]
+    //public async Task<IActionResult> Assign(
+    //    int id,
+    //    AssignServiceRequestCommand command)
+    //{
+    //    command.ServiceRequestId = id;
+    //    return Ok(await _mediator.Send(command));
+    //}
+
+    //// ===================== OFFICER =====================
+    //[HttpPut("{id}/status")]
+    //[Authorize(Roles = "Officer")]
+    //public async Task<IActionResult> UpdateStatus(
+    //    int id,
+    //    UpdateServiceRequestStatusCommand command)
+    //{
+    //    command.ServiceRequestId = id;
+    //    command.UpdatedByUserId = int.Parse(
+    //        User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+    //    return Ok(await _mediator.Send(command));
+    //}
 }
