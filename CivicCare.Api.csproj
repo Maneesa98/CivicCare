@@ -7,12 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CivicCare.Application\**" />
+    <Compile Remove="CivicCare.Domain\**" />
+    <Compile Remove="CivicCare.Infrastructure\**" />
     <Compile Remove="DTOs\**" />
     <Compile Remove="Migrations\**" />
+    <Content Remove="CivicCare.Application\**" />
+    <Content Remove="CivicCare.Domain\**" />
+    <Content Remove="CivicCare.Infrastructure\**" />
     <Content Remove="DTOs\**" />
     <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="CivicCare.Application\**" />
+    <EmbeddedResource Remove="CivicCare.Domain\**" />
+    <EmbeddedResource Remove="CivicCare.Infrastructure\**" />
     <EmbeddedResource Remove="DTOs\**" />
     <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="CivicCare.Application\**" />
+    <None Remove="CivicCare.Domain\**" />
+    <None Remove="CivicCare.Infrastructure\**" />
     <None Remove="DTOs\**" />
     <None Remove="Migrations\**" />
   </ItemGroup>
@@ -34,6 +46,8 @@
   <ItemGroup>
     <ProjectReference Include="..\CivicCare.Application\CivicCare.Application.csproj" />
     <ProjectReference Include="..\CivicCare.Infrastructure\CivicCare.Infrastructure.csproj" />
+    <ProjectReference Include="CivicCare.Application\CivicCare.Application.csproj" />
+    <ProjectReference Include="CivicCare.Infrastructure\CivicCare.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

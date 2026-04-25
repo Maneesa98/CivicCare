@@ -5,11 +5,11 @@ VisualStudioVersion = 17.14.36915.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicCare.Api", "CivicCare.Api.csproj", "{907B0015-EF3F-4896-AFB6-566A099F18AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicCare.Infrastructure", "..\CivicCare.Infrastructure\CivicCare.Infrastructure.csproj", "{0CD98E46-3479-41C7-9945-A184365AF658}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicCare.Application", "CivicCare.Application\CivicCare.Application.csproj", "{AEC78666-CBD7-22C4-BEDD-83D3911E55C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicCare.Application", "..\CivicCare.Application\CivicCare.Application.csproj", "{9A19EACE-60B7-440A-9A44-0292B598DF4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicCare.Domain", "CivicCare.Domain\CivicCare.Domain.csproj", "{B4934116-CB7D-0BB6-E511-D506D6485348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicCare.Domain", "..\CivicCare.Domain\CivicCare.Domain.csproj", "{8EC0F623-18A4-454F-B76F-AA3813920419}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicCare.Infrastructure", "CivicCare.Infrastructure\CivicCare.Infrastructure.csproj", "{973F8947-18C2-D15A-88BC-4DAD4E02B0F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{907B0015-EF3F-4896-AFB6-566A099F18AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907B0015-EF3F-4896-AFB6-566A099F18AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907B0015-EF3F-4896-AFB6-566A099F18AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CD98E46-3479-41C7-9945-A184365AF658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CD98E46-3479-41C7-9945-A184365AF658}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CD98E46-3479-41C7-9945-A184365AF658}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CD98E46-3479-41C7-9945-A184365AF658}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A19EACE-60B7-440A-9A44-0292B598DF4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A19EACE-60B7-440A-9A44-0292B598DF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A19EACE-60B7-440A-9A44-0292B598DF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A19EACE-60B7-440A-9A44-0292B598DF4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EC0F623-18A4-454F-B76F-AA3813920419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EC0F623-18A4-454F-B76F-AA3813920419}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EC0F623-18A4-454F-B76F-AA3813920419}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EC0F623-18A4-454F-B76F-AA3813920419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC78666-CBD7-22C4-BEDD-83D3911E55C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC78666-CBD7-22C4-BEDD-83D3911E55C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC78666-CBD7-22C4-BEDD-83D3911E55C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC78666-CBD7-22C4-BEDD-83D3911E55C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4934116-CB7D-0BB6-E511-D506D6485348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4934116-CB7D-0BB6-E511-D506D6485348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4934116-CB7D-0BB6-E511-D506D6485348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4934116-CB7D-0BB6-E511-D506D6485348}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973F8947-18C2-D15A-88BC-4DAD4E02B0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973F8947-18C2-D15A-88BC-4DAD4E02B0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973F8947-18C2-D15A-88BC-4DAD4E02B0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973F8947-18C2-D15A-88BC-4DAD4E02B0F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
