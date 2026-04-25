@@ -27,28 +27,28 @@ public class ServiceRequestsController : ControllerBase
         return Ok(await _mediator.Send(command));
     }
 
-    //// ===================== ADMIN =====================
-    //[HttpPut("{id}/assign")]
-    //[Authorize(Roles = "Admin")]
-    //public async Task<IActionResult> Assign(
-    //    int id,
-    //    AssignServiceRequestCommand command)
-    //{
-    //    command.ServiceRequestId = id;
-    //    return Ok(await _mediator.Send(command));
-    //}
+    // ===================== ADMIN =====================
+    [HttpPut("{id}/assign")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Assign(
+        int id,
+        AssignServiceRequestCommand command)
+    {
+        command.ServiceRequestId = id;
+        return Ok(await _mediator.Send(command));
+    }
 
-    //// ===================== OFFICER =====================
-    //[HttpPut("{id}/status")]
-    //[Authorize(Roles = "Officer")]
-    //public async Task<IActionResult> UpdateStatus(
-    //    int id,
-    //    UpdateServiceRequestStatusCommand command)
-    //{
-    //    command.ServiceRequestId = id;
-    //    command.UpdatedByUserId = int.Parse(
-    //        User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+    // ===================== OFFICER =====================
+    [HttpPut("{id}/status")]
+    [Authorize(Roles = "Officer")]
+    public async Task<IActionResult> UpdateStatus(
+        int id,
+        UpdateServiceRequestStatusCommand command)
+    {
+        command.ServiceRequestId = id;
+        command.UpdatedByUserId = int.Parse(
+            User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
-    //    return Ok(await _mediator.Send(command));
-    //}
+        return Ok(await _mediator.Send(command));
+    }
 }
